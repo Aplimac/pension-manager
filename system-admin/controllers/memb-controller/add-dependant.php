@@ -34,9 +34,9 @@ if (!isset($_POST['submit']))
         }
     }
 
-    $sql = "INSERT INTO `dependents`(  `memberssn_fk`,  `first_name`, `last_name`, `id_type`,`national_id_no`, `dob`, `gender` , `re_to_member`,   `address1`, `address2`, `city`, `country`, `mobile_no`, `email`) VALUES ( '$ssn_no','$rel_to_memeber','$first_name','$lastname','$identity_doc_type','$Id_no','$dob','$gender', '$address1','$address2','$address_city','$address_country' ,'$cellno'  ,'$email'  )";
+    $sql = "INSERT INTO `dependents`(  `memberssn_fk`,  `first_name`, `last_name`, `id_type`,`national_id_no`, `dob`, `gender` , `re_to_member`,   `address1`, `address2`, `city`, `country`, `mobile_no`, `email`) VALUES ( '$ssn_no','$first_name','$lastname','$identity_doc_type','$Id_no','$dob','$gender', '$rel_to_memeber','$address1','$address2','$address_city','$address_country' ,'$cellno'  ,'$email'  )";
     
-       echo '<script>alert("echored")</script>';
+       
 
     $result = mysqli_query($conn, $sql);
     

@@ -40,10 +40,10 @@
                         <div class="col-12">
                         <div class="card">
                                     <div class="card-body">
-                                        <form class="needs-validation mt-4" method="POST" novalidate> 
+                                        <form class="needs-validation mt-4" action="./controllers/gs-controllers/sub-main-add-statutory.php" method="POST" novalidate> 
                                                     <div class="form-row">
                                                         <div class="col-md-3 mb-3">
-                                                            <input type="date" class="form-control" name="reg_no" id="validationCustom01" placeholder="Effective on" required>
+                                                            <input type="date" class="form-control" name="effective" id="validationCustom01" placeholder="Effective on" required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div> 
@@ -52,7 +52,7 @@
                                                             </div>
                                                         </div><!--end col-->
                                                         <div class="col-md-3 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder="Ret Age"  required>
+                                                            <input type="text" class="form-control" name="retirement" id="validationCustom01" placeholder="Ret Age"  required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>
@@ -61,7 +61,7 @@
                                                             </div>
                                                         </div><!--end col-->
                                                         <div class="col-md-3 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder="Min Comm"  required>
+                                                            <input type="number" class="form-control" name="commutation" id="validationCustom01" placeholder="Min Comm"  required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>
@@ -71,7 +71,7 @@
                                                             
                                                         </div><!--end col-->
                                                         <div class="col-md-3 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder="Min Annual Pension"  required>
+                                                            <input type="number" class="form-control" name="pension_annual" id="validationCustom01" placeholder="Min Annual Pension"  required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>
@@ -87,7 +87,7 @@
 
                                                     <div class="form-row">
                                                         <div class="col-md-3 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder="Max Tax Free" required>
+                                                            <input type="number" class="form-control" name="tax" id="validationCustom01" placeholder="Max Tax Free" required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div> 
@@ -96,7 +96,7 @@
                                                             </div>
                                                         </div><!--end col-->
                                                         <div class="col-md-3 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder="Min Additional Award"  required>
+                                                            <input type="number" class="form-control" name="additional_award" id="validationCustom01" placeholder="Min Additional Award"  required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>
@@ -105,7 +105,7 @@
                                                             </div>
                                                         </div><!--end col-->
                                                         <div class="col-md-3 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder="Nessa Limiit"  required>
+                                                            <input type="number" class="form-control" name="threshold" id="validationCustom01" placeholder="Nessa Limiit"  required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>
@@ -115,7 +115,7 @@
                                                             
                                                         </div><!--end col-->
                                                         <div class="col-md-3 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder="Nessa %"  required>
+                                                            <input type="number" class="form-control" name="percentage" id="validationCustom01" placeholder="Nessa %"  required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>
@@ -158,20 +158,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>28/02/2009
-                                                    </td>
-                                                    <td>60</td>
-                                                    <td>33.333333333333</td>
-                                                    <td>9.9900</td>
-                                                    <td>0</td>
-                                                    <td>249.9900</td>
-                                                    <td>0.0000</td>
-                                                    <td>0</td>
-                                                    <td>
-                                                        <i class="fa fa-trash text-danger"></i>
-                                                    </td>
-                                                </tr>
+                                                   <?php require('./includes/populate-gs-tables/sub-main-statutory-table.php') ?>
                                                 </tbody>
                                         </table>
                             
@@ -215,29 +202,37 @@
       <!-- App js -->
       <script src="assets/js/app.js"></script>
       <script src="assets/js/get_scheme.js"></script>
-      <!-- file to be  -->
+
       <script>
-         //create method form to send post to server
-         $("table tbody tr").click(function(){
-             
-             var row = $(this).find('td:nth-child(3)').text();
-             var form = document.createElement("form");
+        //when the delete icon is clicked this post is run
+        function clickedIcon(id){
+            // create a form with the id element of table
+            var form = document.createElement("form");
              document.body.appendChild(form);
              form.method = "POST";
-             form.action = "controllers/select_scheme.php";
+             form.action = "controllers/gs-controllers/sub-delete-with-id.php";
              var element1 = document.createElement("input");         
-                 element1.name="scheme_name"
-                 element1.value = row;
-                 element1.type = 'text';
+                 element1.name="id"
+                 element1.value = id;
+                 element1.type = 'number';
                  form.appendChild(element1);
+            var element2 = document.createElement("input");         
+                element2.name="endpoint";
+                element2.value = "sub-main-gs-statutory-req.php";
+                element2.type = 'text';
+                form.appendChild(element2);
+            var element3 = document.createElement("input");         
+                element3.name="table_name";
+                element3.value = "statutory";
+                element3.type = 'text';
+                form.appendChild(element3);
+        
              form.submit();
-         
-             
-             });
-         
-            
-             
+
+        }
+
       </script>
+   
         
     </body>
 

@@ -15,10 +15,10 @@ if ($resultCheck > 0)
         
     {
         $ssn_no = $row["ssn_no"];
-        $member_name =  $row["first_name"].' '.$row["lastname"];
+        $member_full_name =  $row["first_name"].' '.$row["lastname"];
         
         
-        echo ' <option value="'.$ssn_no.'">'.$ssn_no.' - '.$member_name.'</option>';
+        echo ' <option value="'.$ssn_no.'">'.$member_full_name.' (SSN: '.$ssn_no.')</option>';
     }
 }
 

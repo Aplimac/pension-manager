@@ -90,29 +90,7 @@
                                 </div></a><!--end card-->
                         </div><!--end col-->
 
-                        <div class="col-lg-3">
-                            <a href="main-global-settings.php">     <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm-4 col-4 align-self-center">
-                                            <div class="icon-info">
-                                                <i data-feather="settings" class="align-self-center icon-lg icon-dual-info"></i>
-                                            </div> 
-                                        </div>
-                                        <div class="col-sm-8 col-8 align-self-center text-right">
-                                            <div class="ml-2">
-                                                <p class="mb-1 text-muted">Global Parameter</p>
-                                                <h3 class="mt-0 mb-1 font-weight-semibold">Settings</h3>  
-                                                <span class="badge badge-soft-info mt-1 shadow-none">Edit</span>   
-                                            </div>
-                                        </div>                    
-                                    </div>
-                                    <div class="progress mt-2" style="height:3px;">
-                                            <div class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div><!--end card-body-->
-                                </div></a><!--end card-->                                    
-                        </div><!--end col-->
+                       
 
                         <div class="col-lg-3">
                             <a href="set-profile.php">     <div class="card">
@@ -136,6 +114,29 @@
                                     </div>
                                 </div><!--end card-body-->
                                 </div></a><!--end card-->
+                        </div><!--end col-->
+                          <div class="col-lg-3">
+                            <a href="main-global-settings.php">     <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-4 align-self-center">
+                                            <div class="icon-info">
+                                                <i data-feather="settings" class="align-self-center icon-lg icon-dual-info"></i>
+                                            </div> 
+                                        </div>
+                                        <div class="col-sm-8 col-8 align-self-center text-right">
+                                            <div class="ml-2">
+                                                <p class="mb-1 text-muted">Global Parameter</p>
+                                                <h3 class="mt-0 mb-1 font-weight-semibold">Settings</h3>  
+                                                <span class="badge badge-soft-info mt-1 shadow-none">Edit</span>   
+                                            </div>
+                                        </div>                    
+                                    </div>
+                                    <div class="progress mt-2" style="height:3px;">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div><!--end card-body-->
+                                </div></a><!--end card-->                                    
                         </div><!--end col-->
                     </div><!--end row-->
                     <div class="row">

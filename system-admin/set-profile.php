@@ -5,20 +5,6 @@
 <?php require("includes/head.php"); ?>
 
     <body>
-    <style>
-  
-    .preview {
-        overflow: hidden;
-        width: inherit; 
-        height: 160px;
-        margin: 10px;
-        border: 1px solid red;
-    }
-    .modal-lg{
-        max-width: 1000px !important;
-    }
-</style>
-
         <!-- leftbar-tab-menu -->
         
         <?php require("includes/left-nav-bar.php"); ?>
@@ -33,6 +19,7 @@
             <div class="page-content-tab">
 
                 <div class="container-fluid">
+                    
                     <!-- Page-Title -->
                     <div class="row">
                         <div class="col-sm-12">
@@ -57,10 +44,9 @@
                                         <div class="row">
                                             <div class="col-lg-4 align-self-center mb-3 mb-lg-0">
                                                 <div class="met-profile-main">
-                          
-                                                    <form method="post">
+                                                    <form method="post" enctype="multipart/form-data" >
                                                         <!-- image upload  linked to customCSS-->
-                                                     <input style="display: none;"  type="file" class="image" name="profpic" id="upload_prof_pic">
+                                                     <input style="display: none;" type="file" class="image" name="profpic" id="upload_prof_pic">
                                                     </form>
                             
                                                     <div class="met-profile-main-pic">
@@ -87,9 +73,9 @@
                                                     <li class="mt-2"><i class="dripicons-location text-info font-18 mt-2 mr-2"></i> <b>User Role</b>: <?php echo $_SESSION["user_role"]; ?></li>
                                                 </ul>
                                                 <div class="button-list btn-social-icon">   <br/>        
-                                                    <a href="set-manual.php" data-toggle="tooltip-custom" data-placement="left"  data-trigger="hover" title="" data-original-title="Manual" ><i class="dripicons-question text-muted mr-2"></i> </a> 
-                                                    <a href="set-support.php" data-toggle="tooltip-custom" data-placement="right"  data-trigger="hover" title="" data-original-title="Support" ><i class="dripicons-message text-muted mr-2"></i> </a>
-                                                    <a href="controllers/logout.php"  data-toggle="tooltip-custom" data-placement="right"  data-trigger="hover" title="" data-original-title="Logout"><i class="dripicons-power text-muted mr-2" ></i> </a>
+                                                    <a href="set-manual.php"><i class="dripicons-question text-muted mr-2"></i> </a> 
+                                                    <a href="set-support.php"><i class="dripicons-message text-muted mr-2"></i> </a>
+                                                    <a href="controllers/logout.php"><i class="dripicons-power text-muted mr-2"></i> </a>
                                                 </div>
                                             </div><!--end col-->
                                         </div><!--end row-->
@@ -183,41 +169,34 @@
                         </div><!--end col-->
                     </div><!--end row-->
 
-                  <!--  trigger modal for cropping -->
-    
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="crop_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <img src="" class="img-fluid" id="sample_img" alt="">   
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="preview"> </div>   
-                                            </div>
-                                           
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                    </div>
-                                </div>
+                    <!-- ****************Modal for cropping the profile picture  *********** -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="cropModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
+                            <div class="modal-body">
+                                <img src="" class="img-fluid" id="sample_img" alt="">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
 
-
+                    <!-- ************** End of modal ********************* -->
                     
-            
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cropModal">
+                        Launch demo modal
+                        </button>
         
                 </div><!-- container -->
  
@@ -236,35 +215,24 @@
        <button type="button" class="btn btn-gradient-primary waves-effect waves-light " style="visibility: hidden;" id="Invalid_password_nomatch"> </button>
         
        <button type="button" class="btn btn-gradient-primary waves-effect waves-light " style="visibility: hidden;" id="Invalid_password_wrongpass"> </button>
-
-    <!-- Modal for cropping image -->
-    <!-- Button trigger modal -->
-    
-
-    
         
-  
-      <script src="assets/js/jquery.min.js"></script>
+        
+
+ <script src="assets/js/jquery.min.js"></script>
       <script src="assets/js/jquery-ui.min.js"></script>
       <script src="assets/js/bootstrap.bundle.min.js"></script>
       <script src="assets/js/metismenu.min.js"></script>
       <script src="assets/js/waves.js"></script>
       <script src="assets/js/feather.min.js"></script>
       <script src="assets/js/jquery.slimscroll.min.js"></script>
-      <script src="../plugins/apexcharts/apexcharts.min.js"></script>
       <script src="../plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
       <script src="../plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
       <script src="../plugins/footable/js/footable.js"></script>
       <script src="../plugins/moment/moment.js"></script> 
-      <script src="assets/pages/jquery.footable.init.js"></script> 
-      <script src="assets/pages/jquery.analytics_dashboard.init.js"></script>
       <!-- App js -->
       <script src="assets/js/app.js"></script>
-      <script src="assets/js/get_scheme.js"></script>
-      <!-- file to be  -->
-
-      <!-- Crop -->
       <script src="../plugins/cropper/js/cropper.js"></script>
+      <!-- file to be  -->
         
          <!-- Sweet-Alert  -->
         <script src="../plugins/sweet-alert2/sweetalert2.min.js"></script>           
@@ -306,41 +274,39 @@
            }
        }
         ?>
-
         <script>
-            $(document).ready(()=>{
-                var modal = $('#crop_modal');
-                var sample = document.getElementById('sample_img'); // to be cropped
-                var cropper;
+            $(document).ready(()=>{ 
+                var _modal = $('#cropModal');
+                var sample_img = document.getElementById('sample_img');
+                var cropper; // initialising cropper
+
+                //when form profpic changes
                 $('#upload_prof_pic').change((event)=>{
                     var files = event.target.files;
-                
-                    var done = function(url) {
-                        sample.src = url;
-                        modal.modal('show');
+                    //function after targeting files return done object
+                    var done = (url)=>{
+                        sample_img.src = url;
+                        _modal.modal('show');
                     };
+
                     if(files && files.length > 0){
-                    reader = new FileReader();
-                    reader.onload = function(event)
-                    {
-                        done(reader.result);
-                    };
-                    reader.readAsDataURL(files[0]);
-                    }  
-                    
+                        reader = new FileReader();
+                        reader.onload = function(event)
+                        {
+                            done(reader.result);
+                        };
+                        reader.readAsDataURL(files[0]);
+                    }
                 });
-                modal.on('shown.bs.modal', function() {
-                    cropper = new Cropper(sample, {
+
+                _modal.on('shown.bs.modal', function() {
+                    cropper = new Cropper(sample_img, {
                         aspectRatio: 1,
-                        viewMode: 3,
-                        preview:'.preview'
+                        viewMode: 3
                     });
-                });
-               
+                })
 
             });
-         
-           
         </script>
             
                 

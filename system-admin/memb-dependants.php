@@ -31,33 +31,7 @@
                </div>
                <!-- end page title end breadcrumb -->
                <div class="row">
-                  <div class="col-6">
-                     <div class="card">
-                        <div class="card-body">
-                           <form class="needs-validation mt-4" method="POST" action="controllers/memb-controller/pop-dep-edit.php" novalidate>
-                              <div class="form-row">
-                                 <div class="col-md-8 mb-3">
-                                    <input type="text" class="form-control" name="dep_ssn_no" id="validationCustom01" placeholder="Dependant SSN No..."  required>
-                                    <div class="valid-feedback">
-                                       Looks good!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                       Make sure your input is in number format!
-                                    </div>
-                                 </div>
-                                 <!--end col-->
-                                 <div class="col-md-4 mb-3">
-                                    <button class="btn btn-gradient-primary" name="submit" type="submit">Edit Dependant</button>
-                                 </div>
-                                 <!--end col-->
-                              </div>
-                              <!--end form-row-->
-                           </form>
-                           <!--end form-->
-                        </div>
-                     </div>
-                  </div>
-                  <!--end col-->
+                 <!--end col-->
                   <!-- end page title end breadcrumb -->
                   <div class="col-lg-3">
                      <a href="controllers/memb-controller/pop-dep-add.php">
@@ -106,6 +80,28 @@
                      <!--end card-->
                   </div>
                   <!--end col--> 
+                       <div class="col-lg-6">
+                     <div class="card">
+                        <div class="card-body">
+                           <form class="needs-validation mt-4" method="POST" action="controllers/memb-controller/pop-dep-edit.php"  >
+                              <div class="form-row">
+                                 <div class="col-md-8 mb-2">
+                                    <input required type="text" class="form-control" name="dep_ssn_no" id="validationCustom01" placeholder="Dependant SSN No..."   >
+                                     
+                                 </div>
+                                 <!--end col-->
+                                 <div class="col-md-4 mb-2">
+                                    <button class="btn btn-gradient-primary" name="submit" type="submit">Edit Dependant</button>
+                                 </div>
+                                 <!--end col-->
+                              </div>
+                              <!--end form-row-->
+                           </form>
+                           <!--end form-->
+                        </div>
+                     </div>
+                  </div>
+               
                </div>
                 
                 
@@ -173,11 +169,20 @@
        
        <!--Select-->
         <script src="../plugins/select2/select2.min.js"></script>
-       
+              
+       <!-- Required datatable js -->
+         <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+         <script src="../plugins/datatables/dataTables.bootstrap4.min.js"></script>
+         <!-- Responsive examples -->
+         <script src="../plugins/datatables/dataTables.responsive.min.js"></script>
+         <script src="../plugins/datatables/responsive.bootstrap4.min.js"></script>
+         <script src="assets/pages/jquery.datatable.init.js"></script>
        
 
         <script src="assets/pages/jquery.forms-advanced.js"></script>
-         <script src="../plugins/sweet-alert2/sweetalert2.min.js"></script>           
+         <script src="../plugins/sweet-alert2/sweetalert2.min.js"></script>    
+       
+       
       <?php require('custom-files/sweet-alert.php'); ?>
        
       <?php

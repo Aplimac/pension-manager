@@ -1,4 +1,5 @@
 <?php 
+//add titles to database
 require('../../../config/db_config.php');
 session_start();
 
@@ -18,7 +19,7 @@ if(!isset($_POST['submit'])){
   
     // $_SESSION['modal-trigger-emp-updated'] = true;
     
-    echo   '<script> alert("Successfully added a new title"); window.location.href = "../../sub-main-gs-titles.php"; </script>';
+    echo   '<script> window.location.href = "../../sub-main-gs-titles.php"; </script>';
       
     //*********************************************************************************************
     
@@ -26,7 +27,7 @@ if(!isset($_POST['submit'])){
 
 
 }else{
-    echo   '<script>alert("<Error>No ROLE set!"); window.location.href = "../error.php";</script>';
+    echo   '<script> window.location.href = "../error.php";</script>';
 }
 
 exit();

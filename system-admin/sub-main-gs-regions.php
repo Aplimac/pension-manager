@@ -40,10 +40,10 @@
                         <div class="col-12">
                         <div class="card">
                                     <div class="card-body">
-                                        <form class="needs-validation mt-4" method="POST" novalidate> 
+                                        <form class="needs-validation mt-4" action="./controllers/gs-controllers/sub-main-add-region.php" method="POST" novalidate> 
                                                     <div class="form-row">
                                                         <div class="col-md-3 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder="Country Name" required>
+                                                            <input type="text" class="form-control" name="country" id="validationCustom01" placeholder="Country Name" required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div> 
@@ -52,7 +52,7 @@
                                                             </div>
                                                         </div><!--end col-->
                                                         <div class="col-md-2 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder="Region "  required>
+                                                            <input type="text" class="form-control" name="region" id="validationCustom01" placeholder="Region "  required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>
@@ -61,7 +61,7 @@
                                                             </div>
                                                         </div><!--end col-->
                                                         <div class="col-md-2 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder=" Code"  required>
+                                                            <input type="text" class="form-control" name="code" id="validationCustom01" placeholder=" Code"  required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>
@@ -70,7 +70,7 @@
                                                             </div>
                                                         </div><!--end col-->
                                                         <div class="col-md-3 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder=" Description"  required>
+                                                            <input type="text" class="form-control" name="description" id="validationCustom01" placeholder=" Description"  required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div>
@@ -108,6 +108,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    <?php  require('./includes/populate-gs-tables/sub-main-regions-table.php') ?>
                                                    
                                                 </tbody>
                                         </table>
@@ -153,28 +154,37 @@
       <script src="assets/js/app.js"></script>
       <script src="assets/js/get_scheme.js"></script>
       <!-- file to be  -->
+
       <script>
-         //create method form to send post to server
-         $("table tbody tr").click(function(){
-             
-             var row = $(this).find('td:nth-child(3)').text();
-             var form = document.createElement("form");
+        //when the delete icon is clicked this post is run
+        function clickedIcon(id){
+            // create a form with the id element of table
+            var form = document.createElement("form");
              document.body.appendChild(form);
              form.method = "POST";
-             form.action = "controllers/select_scheme.php";
+             form.action = "controllers/gs-controllers/sub-delete-with-id.php";
              var element1 = document.createElement("input");         
-                 element1.name="scheme_name"
-                 element1.value = row;
-                 element1.type = 'text';
+                 element1.name="id"
+                 element1.value = id;
+                 element1.type = 'number';
                  form.appendChild(element1);
+            var element2 = document.createElement("input");         
+                element2.name="endpoint";
+                element2.value = "sub-main-gs-regions.php";
+                element2.type = 'text';
+                form.appendChild(element2);
+            var element3 = document.createElement("input");         
+                element3.name="table_name";
+                element3.value = "regions";
+                element3.type = 'text';
+                form.appendChild(element3);
+        
              form.submit();
-         
-             
-             });
-         
-            
-             
+
+        }
+
       </script>
+     
         
     </body>
 

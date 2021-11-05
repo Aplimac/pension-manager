@@ -113,29 +113,7 @@
       <script src="assets/js/app.js"></script>
       <script src="assets/js/get_scheme.js"></script>
       <!-- file to be  -->
-      <script>
-         //create method form to send post to server
-         $("table tbody tr").click(function(){
-             
-             var row = $(this).find('td:nth-child(3)').text();
-             var form = document.createElement("form");
-             document.body.appendChild(form);
-             form.method = "POST";
-             form.action = "controllers/select_scheme.php";
-             var element1 = document.createElement("input");         
-                 element1.name="scheme_name"
-                 element1.value = row;
-                 element1.type = 'text';
-                 form.appendChild(element1);
-             form.submit();
-         
-             
-             });
-         
-            
-             
-      </script>
-        
+   
     </body>
 
  

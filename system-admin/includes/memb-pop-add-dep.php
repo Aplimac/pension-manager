@@ -7,8 +7,8 @@
    <div class="col-lg-12">
       <div class="card">
          <div class="card-body">
-            <h4 class="mt-0 header-title">Membership Form</h4>
-            <h3>Dependant Basic Details</h3>
+            <h4>Dependant Basic Details</h4>
+            <h4 class="mt-0 header-title">Details Form</h4>
             <br/>
             <form class="needs-validation" method="POST" action="controllers/memb-controller/add-dependant.php" novalidate>
                <!--end form-row-->
@@ -16,7 +16,7 @@
                   <div class="col-md-12 mb-3">
                      <label for="validationCustom02">Select Member</label>
                   
-                                            <select name="ssn_no"  class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;">
+                                            <select required  name="ssn_no"  class="select2 form-control mb-3 custom-select" style="width: 100%; height:36px;">
                                                 <option>Select</option>
                                                  <?php  require('member-select-pop.php'); ?>
                                                     
@@ -34,7 +34,7 @@
                   <!--end col-->
                   <div class="col-md-4 mb-3">
                      <label for="validationCustom02">First Name</label>
-                     <input type="text" name="first_name" class="form-control" id="validationCustom02"   required>
+                     <input required   type="text" name="first_name" class="form-control" id="validationCustom02"   required>
                      <div class="valid-feedback">
                         Looks good!
                      </div>
@@ -46,7 +46,7 @@
                   <div class="col-md-4 mb-3">
                   <!--end col-->
                      <label for="validationCustom02">Last Name</label>
-                     <input type="text" name="lastname" class="form-control" id="validationCustom02"   required>
+                     <input required   type="text" name="lastname" class="form-control" id="validationCustom02"   required>
                      <div class="valid-feedback">
                         Looks good!
                      </div>
@@ -57,7 +57,11 @@
                    
                   <div class="col-md-4 mb-3">
                      <label for="validationCustom02">Gender</label>
-                     <input type="text" name="gender" class="form-control" id="validationCustom02"   required> 
+                     <Select required   type="text" name="gender" class="form-control" id="validationCustom02"   required> 
+                         <option>Select</option> 
+                         <option value="Male">Male</option>
+                         <option value="female">Female</option>
+                      </Select>
                      <div class="valid-feedback">
                         Looks good!
                      </div>
@@ -67,11 +71,11 @@
                   </div>
                   <div class="col-md-4 mb-3">
                      <label for="validationCustom02">Identity Document Type</label> 
-                     <select  type="text" name="identity_doc_type" class="form-control" id="validationCustom02"   required>
-                        <option  >Select Marital Status</option>
-                        <option value="Single">Single</option>
-                        <option value="Married">Married</option>
-                        <option value="Divorced">Divorced</option>
+                     <select required    type="text" name="identity_doc_type" class="form-control" id="validationCustom02"   required>
+                        <option  >Select</option>
+                        <option value="National Id">National ID</option>
+                        <option value="Passport">Passport</option>
+                        <option value="Drivers Licence">Drivers Licence</option>
                      </select>
                      <div class="valid-feedback">
                         Looks good!
@@ -83,7 +87,7 @@
                   <!--end col-->
                   <div class="col-md-4 mb-3">
                      <label for="validationCustom02">Identity No</label>
-                     <input type="text" name="Id_no" class="form-control" id="validationCustom02"   required> 
+                     <input required   type="text" name="Id_no" class="form-control" id="validationCustom02"   required> 
                      <div class="valid-feedback">
                         Looks good!
                      </div>
@@ -94,7 +98,7 @@
                   <!--end col-->
                   <div class="col-md-4 mb-3">
                      <label for="validationCustom02">Date Of Birth</label>
-                     <input type="date" name="dob" class="form-control" id="validationCustom02"   required>
+                     <input required   type="date" name="dob" class="form-control" id="validationCustom02"   required>
                      <div class="valid-feedback">
                         Looks good!
                      </div>
@@ -107,9 +111,9 @@
                <!--end form-row-->
                <div class="form-row"> 
                   <!--end col-->
-                  <div class="col-md-8 mb-3">
+                  <div class="col-md-12 mb-3">
                      <label for="validationCustom02">Relationship to Member</label>
-                     <select type="text" name="rel_to_memeber" class="form-control" id="validationCustom02"   required>
+                     <select required   type="text" name="rel_to_memeber" class="form-control" id="validationCustom02"   required>
                         <option  >Select</option> 
                         <option value="Child">Child</option>
                         <option value="Mother">Mother</option> 
@@ -137,7 +141,7 @@
                <div class="form-row">
                   <div class="col-md-6 mb-3">
                      <label for="validationCustom02">Address Line 1</label>
-                     <input type="text" name="address1" class="form-control" id="validationCustom02"   required>
+                     <input required   type="text" name="address1" class="form-control" id="validationCustom02"   required>
                      <div class="valid-feedback">
                         Looks good!
                      </div>
@@ -148,7 +152,7 @@
                   <!--end col-->
                   <div class="col-md-6 mb-3">
                      <label for="validationCustom02">Address Line 2</label>
-                     <input type="text" name="address2" class="form-control" id="validationCustom02"   required>
+                     <input  required  type="text" name="address2" class="form-control" id="validationCustom02"   required>
                      <div class="valid-feedback">
                         Looks good!
                      </div>
@@ -161,7 +165,7 @@
                <div class="form-row">
                   <div class="col-md-6 mb-3">
                      <label for="validationCustom02">City</label>
-                     <select type="text" name="address_city" class="form-control" id="validationCustom02"   required>
+                     <select required   type="text" name="address_city" class="form-control" id="validationCustom02"   required>
                         <option value="Harare"> Harare</option>
                         <option value="Marondera"> Marondera</option>
                      </select>
@@ -175,7 +179,7 @@
                   <!--end col-->
                   <div class="col-md-6 mb-3">
                      <label for="validationCustom02">Country</label>
-                     <select type="text" name="address_country" class="form-control" id="validationCustom02"   required>
+                     <select  required  type="text" name="address_country" class="form-control" id="validationCustom02"   required>
                         <option value="Zimbabwe"> Zimbabwe</option>
                      </select>
                      <div class="valid-feedback">
@@ -190,7 +194,7 @@
                <div class="form-row"> 
                   <div class="col-md-6 mb-3">
                      <label for="validationCustom02">Cell No.</label>
-                     <input type="text" name="cellno" class="form-control" id="validationCustom02"   required> 
+                     <input  required  type="text" name="cellno" class="form-control" id="validationCustom02"   required> 
                      <div class="valid-feedback">
                         Looks good!
                      </div>
@@ -199,11 +203,10 @@
                      </div>
                   </div>
                   <!--end col-->
-               </div>
-               <div class="form-row">
+                
                   <div class="col-md-6 mb-3">
                      <label for="validationCustom02"> Email Address</label>
-                     <input type="email" name="email" class="form-control" id="validationCustom02"   required>  
+                     <input required   type="email" name="email" class="form-control" id="validationCustom02"   required>  
                      <div class="valid-feedback">
                         Looks good!
                      </div>

@@ -1,4 +1,5 @@
 <?php 
+//get scheme-data data from database
      require_once("../config/db_config.php");
                                     
     $sql    = "SELECT * FROM `scheme_types` WHERE `status`= 1 ;";
@@ -11,7 +12,7 @@
                 <tr>
                     <td>'.$row["scheme_type"].'</td>
                     <td>'.$row["code"].'</td>
-                    <td><i class="fa fa-trash text-danger"></i></td>
+                    <td><i id= "'.$row["id"].'" class="fa fa-trash text-danger" onclick = "clickedIcon(this.id);"></i></td>
                 </tr>
             ';
         }

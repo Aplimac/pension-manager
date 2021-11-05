@@ -40,10 +40,10 @@
                         <div class="col-12">
                         <div class="card">
                                     <div class="card-body">
-                                        <form class="needs-validation mt-4" method="POST" novalidate> 
+                                        <form class="needs-validation mt-4" action="./controllers/gs-controllers/sub-main-add-marital-status.php" method="POST" novalidate> 
                                                     <div class="form-row">
                                                         <div class="col-md-4 mb-3">
-                                                            <input type="text" class="form-control" name="reg_no" id="validationCustom01" placeholder="Status" required>
+                                                            <input type="text" class="form-control" name="marital_status" id="validationCustom01" placeholder="Status" required>
                                                             <div class="valid-feedback">
                                                                 Looks good!
                                                             </div> 
@@ -80,16 +80,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                   
-                                                    <td>Single</td>
-                                                    <td><i class="fa fa-trash text-danger"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                           
-                                                    <td>Married</td>
-                                                    <td><i class="fa fa-trash text-danger"></i></td>
-                                                    </tr>
+                                                    <?php require('./includes/populate-gs-tables/sub-main-marital-status-table.php') ?>
                                                 </tbody>
                                         </table>
                             
@@ -133,29 +124,37 @@
       <!-- App js -->
       <script src="assets/js/app.js"></script>
       <script src="assets/js/get_scheme.js"></script>
-      <!-- file to be  -->
+
       <script>
-         //create method form to send post to server
-         $("table tbody tr").click(function(){
-             
-             var row = $(this).find('td:nth-child(3)').text();
-             var form = document.createElement("form");
+        //when the delete icon is clicked this post is run
+        function clickedIcon(id){
+            // create a form with the id element of table
+            var form = document.createElement("form");
              document.body.appendChild(form);
              form.method = "POST";
-             form.action = "controllers/select_scheme.php";
+             form.action = "controllers/gs-controllers/sub-delete-with-id.php";
              var element1 = document.createElement("input");         
-                 element1.name="scheme_name"
-                 element1.value = row;
-                 element1.type = 'text';
+                 element1.name="id"
+                 element1.value = id;
+                 element1.type = 'number';
                  form.appendChild(element1);
+            var element2 = document.createElement("input");         
+                element2.name="endpoint";
+                element2.value = "sub-main-gs-marital-status.php";
+                element2.type = 'text';
+                form.appendChild(element2);
+            var element3 = document.createElement("input");         
+                element3.name="table_name";
+                element3.value = "marital_status";
+                element3.type = 'text';
+                form.appendChild(element3);
+        
              form.submit();
-         
-             
-             });
-         
-            
-             
+
+        }
+
       </script>
+ 
         
     </body>
 

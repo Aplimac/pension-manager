@@ -17,7 +17,7 @@ if(isset($_SESSION["active_login"])){
 ?>
 
 <head> 
-
+    
     
         <meta charset="utf-8" />
         <title>Aplimac Pensions Manager</title>
@@ -27,12 +27,10 @@ if(isset($_SESSION["active_login"])){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">z
         <meta content="" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link href="../plugins/cropper/css/cropper.css" rel="stylesheet">
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.png">
-        <link href="../plugins/cropper/css/cropper.css" rel="stylesheet">
-        <link href="../plugins/cropper/css/main.css" rel="stylesheet">
-        
              <!--Form Wizard-->
         <link rel="stylesheet" href="../plugins/jquery-steps/jquery.steps.css">
 
@@ -41,7 +39,6 @@ if(isset($_SESSION["active_login"])){
         <link href="../plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
 
         <!-- App css -->
-        <link href="assets/css/preloader.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/jquery-ui.min.css" rel="stylesheet">
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />

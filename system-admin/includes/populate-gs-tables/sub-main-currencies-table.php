@@ -1,4 +1,5 @@
 <?php 
+//get currencies data from database
      require_once("../config/db_config.php");
                                     
     $sql    = "SELECT * FROM `currencies` WHERE `status`= 1 ;";
@@ -14,7 +15,7 @@
                     <td>'.$row["description"].'</td>
                     <td>'.$row["effective_date"].'</td>
                     <td>'.$row["expiry_date"].'</td>
-                    <td><i class="fa fa-trash text-danger"></i></td>
+                    <td><i id= "'.$row["id"].'" class="fa fa-trash text-danger" onclick = "clickedIcon(this.id);"></i></td>
                 </tr>
             ';
         }

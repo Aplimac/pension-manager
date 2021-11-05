@@ -134,6 +134,36 @@
       <script src="assets/js/app.js"></script>
       <script src="assets/js/get_scheme.js"></script>
       <!-- file to be  -->
+
+      <script>
+        //when the delete icon is clicked this post is run
+        function clickedIcon(id){
+            // create a form with the id element of table
+            var form = document.createElement("form");
+             document.body.appendChild(form);
+             form.method = "POST";
+             form.action = "controllers/gs-controllers/sub-delete-with-id.php";
+             var element1 = document.createElement("input");         
+                 element1.name="id"
+                 element1.value = id;
+                 element1.type = 'number';
+                 form.appendChild(element1);
+            var element2 = document.createElement("input");         
+                element2.name="endpoint";
+                element2.value = "sub-main-gs-titles.php";
+                element2.type = 'text';
+                form.appendChild(element2);
+            var element3 = document.createElement("input");         
+                element3.name="table_name";
+                element3.value = "titles";
+                element3.type = 'text';
+                form.appendChild(element3);
+        
+             form.submit();
+
+        }
+
+      </script>
   
         
     </body>

@@ -43,7 +43,7 @@
 
                                     <h4 class="mt-0 header-title">New Fund Entrants Uploads</h4>
                                     <br/>
-                                    <form class="needs-validation" method="POST" action="" novalidate> 
+                                    <form class="needs-validation" method="POST" action="controllers/memb-controller/bulk-member-upload.php" novalidate> 
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
                                                 <label for="validationCustom01">Company</label>
@@ -74,30 +74,21 @@
                                              <div  class="col-md-12 mb-3" >
                                                 
                                                      
-                                                        <p class="text-muted mb-3">Upload File</p>
-                                                        <input type="file" id="input-file-now" class="dropify" />                                                   
+                                                       <!-- <p class="text-muted mb-3">Upload File</p>
+                                                        <input type="file" name="member_file" id="input-file-now" class="dropify" />   -->     
+                                                 
+                                                 
+                                                        <input type="file" name="upload_file"   />    
                                                     
                                                 
                                             </div><!--end col-->
                                         
                                         </div>
+                                          
+                                        
+                                        
                                          
-                                       
-                                    
-                                     
-                                      
-                                        
-                                        <div class="form-row">
-                                        </div>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        <button class="btn btn-gradient-primary" type="submit">Process</button>
+                                        <button name="submit" class="btn btn-gradient-primary" type="submit">Process</button>
                                     </form> <!--end form-->                                          
                                 </div><!--end card-body-->
                             </div><!--end card-->
@@ -143,29 +134,7 @@
         
         <script src="../plugins/dropify/js/dropify.min.js"></script>
         <script src="assets/pages/jquery.form-upload.init.js"></script>
-      <!-- file to be  -->
-      <script>
-         //create method form to send post to server
-         $("table tbody tr").click(function(){
-             
-             var row = $(this).find('td:nth-child(3)').text();
-             var form = document.createElement("form");
-             document.body.appendChild(form);
-             form.method = "POST";
-             form.action = "controllers/select_scheme.php";
-             var element1 = document.createElement("input");         
-                 element1.name="scheme_name"
-                 element1.value = row;
-                 element1.type = 'text';
-                 form.appendChild(element1);
-             form.submit();
-         
-             
-             });
-         
-            
-             
-      </script>
+      <!-- file to be  --> 
         
     </body>
 

@@ -1,4 +1,5 @@
 <?php 
+//add scheme-types to database
 require('../../../config/db_config.php');
 session_start();
 
@@ -18,7 +19,7 @@ if(!isset($_POST['submit'])){
   
     // $_SESSION['modal-trigger-emp-updated'] = true;
     
-    echo   '<script> alert("Successfully added a new scheme_type"); window.location.href = "../../sub-main-gs-scheme-types.php"; </script>';
+    echo   '<script>window.location.href = "../../sub-main-gs-scheme-types.php"; </script>';
       
     //*********************************************************************************************
     
